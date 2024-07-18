@@ -1,6 +1,6 @@
 ---
 import { partners } from "@/types/data";
-
+import type { Partner } from "@/types/data";
 ---
 
  <div>
@@ -21,7 +21,7 @@ import { partners } from "@/types/data";
     >
 
       {
-        partners.map( partner => (
+        partners.map( (partner: Partner) => (
           <swiper-slide>
             <a href={partner.url} target="_blank">
               <img class="grayscale" src={partner.image} alt={partner.name} />
