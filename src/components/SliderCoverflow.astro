@@ -1,0 +1,61 @@
+---
+import { projects } from '@/types/data.ts';
+
+---
+<div>
+  <swiper-container id="proyectsSlider" class="mySwiper h-auto sm:h-[600px]" pagination="true" effect="coverflow" grab-cursor="true" centered-slides="true"
+    slides-per-view="auto" coverflow-effect-rotate="50" coverflow-effect-stretch="0" coverflow-effect-depth="100"
+    coverflow-effect-modifier="1" coverflow-effect-slide-shadows="true">
+
+    {projects.map((project, index) => (
+
+      <swiper-slide>
+              <div class="slide-content relative overflow-hidden">
+                  <img src={project.image} class="w-full h-full object-cover" />
+                  <div class="overlay project-overlay absolute flex flex-col bottom-0 w-full bg-black bg-opacity-50  text-white overflow-hidden transition-all duration-500 ease-in-out">
+
+                    <label for={`toggleOverlay-${index}`} class="swap pt-5">
+        
+                      <!-- this hidden checkbox controls the state -->
+                      <input type="checkbox" id={`toggleOverlay-${index}`} />
+                      
+                      <!-- chebron down icon -->
+                      <svg  class="swap-off" xmlns="http://www.w3.org/2000/svg"  width="48"  height="48"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-up"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 15l6 -6l6 6" /></svg>
+                      
+                      <!-- chebron up icon -->
+                      <svg  class="swap-on" xmlns="http://www.w3.org/2000/svg"  width="48"  height="48"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
+                      
+                    </label>
+
+                    <div class="overlay-content mt-0 px-10">
+                        <h4 class="text-lg font-normal">{project.date}</h4>
+                        <h2>{project.title} - {project.location}</h2>
+                        <p class="text-base font-normal my-10">{project.description}</p>
+                        <button class="btn text-xl btn-primary max-w-xs mb-20">Check out this project</button>
+                    </div>
+                  </div>
+              </div>
+          </swiper-slide>
+    ))}
+ 
+  </swiper-container>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const checkboxes = document.querySelectorAll('[id^="toggleOverlay-"]'); // Select all checkboxes that start with 'toggleOverlay-'
+
+      checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener('change', () => {
+            const overlay = checkbox?.closest('.slide-content')?.querySelector('.overlay');
+            if (overlay) {
+                if ((checkbox as HTMLInputElement).checked) {
+                    (overlay as HTMLDivElement).style.top = '0'; // Move overlay to show completely
+                } else {
+                    (overlay as HTMLDivElement).style.top = '72%'; // Move overlay to hide 40%
+                }
+            }
+        });
+      });
+    });
+  </script>
+</div>
+
