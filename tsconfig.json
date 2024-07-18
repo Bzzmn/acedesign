@@ -2,7 +2,7 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
 
-    "baseUrl": "C:/Proyectos/ace4Build/ace4design",
+    "baseUrl": "./",
      "paths": {
       "@/*": ["src/*"],
       "@/components": ["src/components/*"],
