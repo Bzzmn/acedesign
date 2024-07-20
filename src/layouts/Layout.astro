@@ -81,7 +81,20 @@ const { title } = Astro.props;
 				</nav>
 			</footer>
 		</div>
-		<script type="module" src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-		<script type="module" src="/src/scripts/initSwiper.ts"></script>
+		<script>
+			import { register } from 'swiper/element/bundle';
+			register();
+		</script>
+		<script>
+			const swiperEl = document.querySelector('#brandsSlider');
+		  
+			const params = {
+			  injectStyles: [
+				  '.swiper-wrapper { transition-timing-function: linear !important; display: flex; align-items: center; justify-content: center; }',
+			 ],
+			};
+		  
+			Object.assign(swiperEl!, params);
+		  </script>
 	</body>
 </html>
