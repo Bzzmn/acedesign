@@ -3,6 +3,13 @@ export interface Category {
   title: string;
   featured: boolean;
   cover: string;
+  slug: string;
+  description: string;
+  portfolio: {
+    projectName: string;
+    projectImage: string;
+    projectLocationDate: string;
+  }[];
 }
 
 export const categories: Category[] = [
@@ -12,6 +19,27 @@ export const categories: Category[] = [
     featured: true,
     cover:
       "/images/kitchen_remodeling.webp",
+    slug: "kitchen-remodeling",
+    description: "Transform your kitchen into a culinary haven with Ace Design and Construction's premier remodeling services. Serving Delafield and surrounding areas, our design-build approach ensures your kitchen is both beautiful and functional. Whether you need an updated layout for a gourmet chef or a stylish space for family gatherings, our team delivers customized solutions tailored to your lifestyle. Discover our diverse portfolio, showcasing contemporary designs and timeless classics. Start your remodeling journey with a free consultation and let us create the kitchen of your dreams.",
+    portfolio: [
+      {
+        projectName: "Modern Farmhouse Kitchen",
+        projectImage: "/images/gallery/BE4A2254-HDR.webp",
+        projectLocationDate: "Baltimore, MD - March 2024"
+      }, 
+
+      {
+        projectName: "Contemporary Kitchen",
+        projectImage: "/images/gallery/BE4A2235-HDR.webp",
+        projectLocationDate: "Richmond, VA - June 2023"
+      }, 
+
+      {
+        projectName: "Traditional Kitchen",
+        projectImage: "/images/gallery/BE4A2103-HDR.webp",
+        projectLocationDate: "Washington, DC - December 2024"
+      },
+    ],
   },
   {
     id: '2',
@@ -19,6 +47,27 @@ export const categories: Category[] = [
     featured: true,
     cover:
       "/images/bath_remodeling.webp",
+    slug: "bathroom-remodeling",
+    description: "Transform your bathroom into a luxurious and functional space with Ace Design and Construction's expert remodeling services. Serving Delafield and surrounding areas, our design-build approach ensures seamless integration of style and practicality. Whether upgrading your master suite, hallway bathroom, or powder room, our team delivers tailored solutions that enhance storage, improve safety, and add spa-like comfort. Explore our portfolio showcasing diverse styles, from modern farmhouse to traditional elegance. Begin your journey with a free consultation and let us bring your dream bathroom to life.",
+    portfolio: [
+      {
+        projectName: "Modern Master Bathroom",
+        projectImage: "/images/gallery/BE4A2254-HDR.webp",
+        projectLocationDate: "Baltimore, MD - March 2024"
+      }, 
+
+      {
+        projectName: "Transitional Bathroom",
+        projectImage: "/images/gallery/BE4A2235-HDR.webp",
+        projectLocationDate: "Richmond, VA - June 2023"
+      }, 
+
+      {
+        projectName: "Contemporary Powder Room",
+        projectImage: "/images/gallery/BE4A2103-HDR.webp",
+        projectLocationDate: "Washington, DC - December 2024"
+      },
+    ],
   },
   {
     id: '3',
@@ -26,6 +75,27 @@ export const categories: Category[] = [
     featured: true,
     cover:
       "/images/closet_remodeling.webp",
+    slug: "interior-carpentry",
+    description: "Elevate your home with Ace Design and Construction's exceptional interior carpentry services. We specialize in creating bespoke woodwork that enhances the beauty and functionality of your living spaces. From custom cabinetry and built-in bookshelves to custom closets and basement remodeling, our skilled craftsmen deliver tailored solutions that reflect your style and meet your needs. Explore our portfolio to see our commitment to quality and attention to detail. Begin your project with a free consultation and let us transform your vision into reality.",
+    portfolio: [
+      {
+        projectName: "Custom Closets",
+        projectImage: "/images/gallery/BE4A2254-HDR.webp",
+        projectLocationDate: "Baltimore, MD - March 2024"
+      }, 
+
+      {
+        projectName: "Built-In Bookshelves",
+        projectImage: "/images/gallery/BE4A2235-HDR.webp",
+        projectLocationDate: "Richmond, VA - June 2023"
+      }, 
+
+      {
+        projectName: "Basement Remodeling",
+        projectImage: "/images/gallery/BE4A2103-HDR.webp",
+        projectLocationDate: "Washington, DC - December 2024"
+      },
+    ],
   },
   {
     id: '4',
@@ -33,6 +103,27 @@ export const categories: Category[] = [
     featured: true,
     cover:
       "/images/more_projects.webp",
+    slug: "custom-projects",
+    description: "Bring your unique vision to life with Ace Design and Construction's custom projects services. Serving Delafield and surrounding areas, we specialize in crafting personalized solutions that cater to your specific needs and desires. From innovative home additions and unique architectural features to specialized cabinetry and creative storage solutions, our team delivers exceptional craftsmanship and attention to detail. Explore our portfolio to see the diverse range of projects we've completed. Start your journey with a free consultation and let us make your dream project a reality.",
+    portfolio: [
+      {
+        projectName: "Home Additions",
+        projectImage: "/images/gallery/BE4A2254-HDR.webp",
+        projectLocationDate: "Baltimore, MD - March 2024",
+      }, 
+
+      {
+        projectName: "Architectural Features",
+        projectImage: "/images/gallery/BE4A2235-HDR.webp",
+        projectLocationDate: "Richmond, VA - June 2023",
+      }, 
+
+      {
+        projectName: "Specialized Cabinetry",
+        projectImage: "/images/gallery/BE4A2103-HDR.webp",
+        projectLocationDate: "Washington, DC - December 2024",
+      },
+    ],
   }
 ];
 

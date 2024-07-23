@@ -1,0 +1,17 @@
+---
+const { project } = Astro.props
+
+---
+
+    <div class="card card-compact bg-base-100 w-auto h-60 shadow-xl">
+        <figure>
+          <img
+            src={project.projectImage}
+            alt="Shoes" />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">{project.projectName}</h2>
+            <p class="text-sm">{project.projectLocationDate}</p>
+        </div>
+    </div>
+

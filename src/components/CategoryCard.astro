@@ -7,11 +7,11 @@ interface Props {
 
 const { category } = Astro.props
 
-const { id, title, cover, featured } = category
+const { id, title, cover, featured, slug } = category
 ---
 
 <div class="relative w-full  max-w-80 bg-base-100 shadow-xl overflow-hidden">
-  <a href="#">
+  <a href=`/category/${slug}`>
     <img class='image object-cover object-center w-full h-full' src= {cover} alt={title} />
     <div class="card-overlay flex items-center justify-center">
       <h2>{title}</h2>

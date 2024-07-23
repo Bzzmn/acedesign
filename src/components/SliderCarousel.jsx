@@ -17,15 +17,7 @@ export default function Carousel ({slides}) {
 
     Object.assign(swiperElRef.current, params)
     swiperElRef.current.initialize();
-    // listen for Swiper events using addEventListener
-    swiperElRef.current.addEventListener('swiperprogress', (e) => {
-      const [swiper, progress] = e.detail;
-    });
 
-    swiperElRef.current.addEventListener('swiperslidechange', (e) => {
-
-
-    });
   }, []);
 
   return (
@@ -41,7 +33,6 @@ export default function Carousel ({slides}) {
       loop="true"
       init="false"
     >
-
 
       {slides.map( (slide, index) => (
             <swiper-slide  key={index}>
